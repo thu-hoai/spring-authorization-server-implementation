@@ -1,0 +1,19 @@
+server:
+  port: 9000
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+
+spring:
+  datasource:
+    url:
+    username:
+    password:
+  liquibase:
+    change-log: db-script/auth_server_schema.sql
+
+oauth:
+  jwk-set-endpoint: /oauth2/jwks
