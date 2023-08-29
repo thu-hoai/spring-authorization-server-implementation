@@ -1,9 +1,9 @@
 package com.me.authserver.service;
 
-import com.example.demo.authservice.entity.Role;
-import com.example.demo.authservice.entity.UserEntity;
-import com.example.demo.authservice.model.JwtUser;
-import com.example.demo.authservice.repository.UserRepository;
+import com.me.authserver.entity.UserEntity;
+import com.me.authserver.model.JwtUser;
+import com.me.authserver.repository.UserRepository;
+import com.me.authserver.entity.Role;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

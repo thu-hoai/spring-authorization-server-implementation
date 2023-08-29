@@ -1,8 +1,8 @@
 package com.me.authserver.model;
 
-import com.example.demo.authservice.entity.Role;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.me.authserver.entity.Role;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;

@@ -1,6 +1,6 @@
 package com.me.authserver.repository;
 
-import com.example.demo.authservice.entity.UserEntity;
+import com.me.authserver.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -19,57 +19,59 @@ import java.util.Set;
 @Setter
 @Table(name = "t_user")
 public class UserEntity extends AbstractAuditingEntity {
-  @Id
-  @Column(name = "id")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  @Column(name = "username")
-  private String username;
+    @Column(name = "username")
+    private String username;
 
-  @Column(name = "first_name")
-  private String firstName;
+    @Column(name = "first_name")
+    private String firstName;
 
-  @Column(name = "last_name")
-  private String lastName;
+    @Column(name = "last_name")
+    private String lastName;
 
-  @Column(name = "email")
-  private String email;
+    @Column(name = "email")
+    private String email;
 
-  @Column(name = "password_hash")
-  private String password;
+    @Column(name = "password_hash")
+    private String password;
 
-  @Column(name = "is_enabled")
-  private boolean enabled;
+    @Column(name = "is_enabled")
+    private boolean enabled;
 
-  /** Last Password Reset Date */
-  @Column(name = "pwd_reset_date")
-  private LocalDateTime lastPasswordResetDate;
+    /**
+     * Last Password Reset Date
+     */
+    @Column(name = "pwd_reset_date")
+    private LocalDateTime lastPasswordResetDate;
 
-  @Column(name = "date_of_birth")
-  private LocalDate dateOfBirth;
+    @Column(name = "date_of_birth")
+    private LocalDate dateOfBirth;
 
-  @Column(name = "avatar")
-  private byte[] avatar;
+    @Column(name = "avatar")
+    private byte[] avatar;
 
-  @ManyToMany(
-      cascade = {CascadeType.MERGE},
-      fetch = FetchType.EAGER)
-  @JoinTable(
-      name = "user_role",
-      joinColumns = {@JoinColumn(name = "user_id")},
-      inverseJoinColumns = {@JoinColumn(name = "role_id")})
-  private Set<Role> authorities = new HashSet<>();
+    @ManyToMany(
+            cascade = {CascadeType.MERGE},
+            fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_role",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "role_id")})
+    private Set<Role> authorities = new HashSet<>();
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (!(o instanceof UserEntity that)) return false;
-    return Objects.equals(getId(), that.getId());
-  }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UserEntity that)) return false;
+        return Objects.equals(getId(), that.getId());
+    }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(getId());
-  }
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
 }
