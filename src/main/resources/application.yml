@@ -9,9 +9,9 @@ logging:
 
 spring:
   datasource:
-    url:
-    username:
-    password:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:5432/${POSTGRES_DATABASE:auth_server}
+    username: ${AUTH_POSTGRES_USER:postgres}
+    password: ${AUTH_POSTGRES_PASSWORD:123456}
   liquibase:
     change-log: db-script/auth_server_schema.sql
 

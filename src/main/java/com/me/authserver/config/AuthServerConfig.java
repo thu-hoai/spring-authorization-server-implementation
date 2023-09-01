@@ -35,7 +35,6 @@ public class AuthServerConfig {
   }
 
   @Bean
-  @Order(2)
   public RegisteredClientRepository registeredClientRepository(JdbcTemplate jdbcTemplate) {
     return new JdbcRegisteredClientRepository(jdbcTemplate);
   }
